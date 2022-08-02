@@ -78,10 +78,12 @@ def location(request, slug):
         classroom__slug=slug, gender__name="Девочка", requirement__name='-'))
 
 
-    desk_1, desk_2, desk_3, desk_4, desk_5, desk_6 = create_lst_boys(boys_one, girls_one, boys_one_plus, girls_one_plus,
-                                                                     boys_two, girls_two, boys_two_plus, girls_two_plus,
-                                                                     boys_three, girls_three, boys_three_plus,
-                                                                     girls_three_plus, boys, girls)
+    desk_1, desk_2, desk_3, desk_4, desk_5, desk_6 = create_lst_boys(
+            boys_one, girls_one, boys_one_plus, girls_one_plus,
+            boys_two, girls_two, boys_two_plus, girls_two_plus,
+            boys_three, girls_three, boys_three_plus,
+            girls_three_plus, boys, girls)
+
     context = {
         "desk_1": desk_1,
         "desk_2": desk_2,
