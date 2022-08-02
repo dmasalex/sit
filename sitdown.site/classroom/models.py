@@ -52,9 +52,7 @@ class Gender(models.Model):
 
 
 class Requirement(models.Model):
-    """
-    Ограничения
-    """
+    """Ограничения"""
 
     name = models.CharField('Ограничение', max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
