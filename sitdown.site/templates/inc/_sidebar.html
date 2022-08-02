@@ -1,0 +1,10 @@
+{% load class_tags %}
+
+{% get_classroom as classroom_menu %}
+
+<div class="list-group">
+    {% for class in classroom_menu %}
+    <a href="{{ class.get_absolute_url }}" class="list-group-item list-group-item-action">{{ class }}
+        класс</a>
+    {% endfor %}
+</div>

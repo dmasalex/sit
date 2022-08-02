@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Выбрать рассадку для {{ classroom }} класса
+{% endblock %}
+
+{% block sidebar %}
+{% include 'inc/_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+<style type="text/css">
+   #maket {
+    width: 100%; /* Ширина всей таблицы */
+    margin-left: 0.5%;
+    margin-top: 0.5%; /* Отступ сверху */
+   }
+   TD {
+    vertical-align: top; /* Вертикальное выравнивание в ячейках */
+    padding: 5px; /* Поля вокруг ячеек */
+   }
+   TD#leftcol {
+    width: 200px; /* Ширина левой колонки */
+    background: #AFEEEE; /* Цвет фона левой колонки */
+    border: 1px solid #000; /* Параметры рамки */
+   }
+   #spacer {
+    width: 10px; /* Расстояние между колонками */
+    margin-left: 100%;
+   }
+img {
+    border: 1px solid #ddd; /* Gray border */
+    border-radius: 4px;  /* Rounded border */
+    padding: 5px; /* Some padding */
+    width: 90px; /* Set a small width */
+}
+/* Add a hover effect (blue shadow) */
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+</style>
+
+<div class="card mb-3">
+    <div class="card-header"><h5>Выбрать рассадку для {{ classroom }} класса</h5>
+        <a href="{% url 'location' classroom.slug %}"
+           class="btn btn-outline-secondary">Обновить</a>
+        <a href="{% url 'location_save' classroom.slug %}"
+           class="btn btn-outline-secondary">Сохранить рассадку</a>
+        <a href="{% url 'schoolboy' %}"
+           class="btn btn-outline-secondary">Назад</a>
+        <a href="{% url 'location_update' pk %}"
+           class="btn btn-outline-secondary">Внести правки вручную</a>
+    </div>
+
+    <table cellspacing="0" id="maket">
+        <tr>
+            {% for boy in desk_6 %}
+            <td id="leftcol">
+                <div align="center">
+                    <div class="media">
+                        <a target="_blank"><img src="{{ boy.photo.url }}"></a>
+                    </div>
+                    {{ boy }}
+                    {% if boy.energy %}
+                    <h5>Активный</h5>
+                    {% endif %}
+                </div>
+            </td>
+            <td id="spacer"></td>
+            {% endfor %}
+        </tr>
+        <td id="spacer"></td>
+        <tr class="cell">
+            {% for boy in desk_5 %}
+            <td id="leftcol">
+                <div align="center">
+                    <div class="media">
+                        <a target="_blank"><img src="{{ boy.photo.url }}"></a>
+                    </div>
+                    {{ boy }}
+                    {% if boy.energy %}
+                    <h5>Активный</h5>
+                    {% endif %}
+                </div>
+            </td>
+            <td id="spacer"></td>
+            {% endfor %}
+        </tr>
+        <td id="spacer"></td>
+        <tr>
+            {% for boy in desk_4 %}
+            <td id="leftcol">
+                <div align="center">
+                    <div class="media">
+                        <a target="_blank"><img src="{{ boy.photo.url }}"></a>
+                    </div>
+                    {{ boy }}
+                    {% if boy.energy %}
+                    <h5>Активный</h5>
+                    {% endif %}
+                </div>
+            </td>
+            <td id="spacer"></td>
+            {% endfor %}
+        </tr>
+        <td id="spacer"></td>
+        <tr>
+            {% for boy in desk_3 %}
+            <td id="leftcol">
+                <div align="center">
+                    <div class="media">
+                        <a target="_blank"><img src="{{ boy.photo.url }}"></a>
+                    </div>
+                    {{ boy }}
+                    {% if boy.energy %}
+                    <h5>Активный</h5>
+                    {% endif %}
+                </div>
+            </td>
+            <td id="spacer"></td>
+            {% endfor %}
+        </tr>
+        <td id="spacer"></td>
+        <tr>
+            {% for boy in desk_2 %}
+            <td id="leftcol">
+                <div align="center">
+                    <div class="media">
+                        <a target="_blank"><img src="{{ boy.photo.url }}"></a>
+                    </div>
+                    {{ boy }}
+                    {% if boy.energy %}
+                    <h5>Активный</h5>
+                    {% endif %}
+                </div>
+            </td>
+            <td id="spacer"></td>
+            {% endfor %}
+        </tr>
+        <td id="spacer"></td>
+        <tr>
+            {% for boy in desk_1 %}
+            <td id="leftcol">
+                <div align="center">
+                    <div class="media">
+                        <a target="_blank"><img src="{{ boy.photo.url }}"></a>
+                    </div>
+                    {{ boy }}
+                    {% if boy.energy %}
+                    <h5>Активный</h5>
+                    {% endif %}
+                </div>
+            </td>
+            <td id="spacer"></td>
+            {% endfor %}
+        </tr>
+    </table>
+    <div align="center">
+        <div class="col my-auto">
+            <div class="card-header">
+                {% for teacher in teachers %}
+                <div class="media">
+                    <a target="_blank"><img src="{{ teacher.photo.url }}"></a>
+                </div>
+                {{ teacher }}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}

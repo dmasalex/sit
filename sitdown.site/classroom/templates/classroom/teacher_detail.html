@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ object.name }}
+{% endblock %}
+
+{% block sidebar %}
+{% include 'inc/_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+        <div class="card mb-3">
+            <div class="card-header">
+                <h4>{{ object.position }} "{{ object.classroom }}" класса</h4>
+            </div>
+
+            <div class="card-body">
+                <div class="media">
+                    <img src="{{ object.photo.url }}" alt="" width="350" align="left" class="mr-3" vspace="5" hspace="10">
+                    <div class="media-body">
+                        <h5 class="card-title">Имя: {{ object.name }}</h5>
+                        {% if object.comment %}
+                        <h5 class="card-title" align="justify">Коментарии: {{ object.comment }}</h5>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

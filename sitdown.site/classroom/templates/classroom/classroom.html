@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    title
+{% endblock %}
+
+{% block sidebar %}
+{% include 'inc/_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+    {% for room in object_list %}
+        {{ room }} <br/>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block sidebar %}
+{% include 'inc/_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="card mb-3">
+    <div class="card-header">Рассадки классов:</div>
+    <div class="card-body">
+        {% if classroom %}
+        <h4>Так мы сейчас сидим:</h4>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">Класс</th>
+                <th scope="col">Дата начала</th>
+                <th scope="col">Действие</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for class in classroom %}
+            <tr>
+                <th scope="row">{{ class }}</th>
+                <td>{{ class.create_data|date }}</td>
+                <td>
+                    <a href="{% url 'location_now' class.pk %}" class="btn btn-outline-secondary">Посмотреть</a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+        </br>
+        <h4>Так мы сидели раньше:</h4>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">Класс</th>
+                <th scope="col">Дата начала</th>
+                <th scope="col">Дата окончания</th>
+                <th scope="col">Действие</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for class in classroom_last %}
+            {% if class.end_data %}
+            <tr>
+                <th scope="row">{{ class }}</th>
+                <td>{{ class.create_data|date }}</td>
+                <td>{{ class.end_data }}</td>
+                <td>
+                    <a href="{% url 'location_now' class.pk %}" class="btn btn-outline-secondary">Посмотреть</a>
+                </td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
