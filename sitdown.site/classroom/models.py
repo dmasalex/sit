@@ -3,7 +3,6 @@ from django.shortcuts import reverse
 from pytils import translit
 
 
-
 def slugify(s, date_of_birth):
     new_slug = translit.slugify(s)
     return new_slug + "-" + date_of_birth

@@ -4,22 +4,22 @@ import random
 def not_active(desk_3, desk_4, desk_5, desk_6):
 
     for row in range(0, len(desk_3) - 1):
-        if desk_3[row].energy == True and desk_3[row + 1].energy == True:
+        if desk_3[row].energy and desk_3[row + 1].energy:
             print('active true desk_3')
             random.shuffle(desk_3)
 
     for row in range(0, len(desk_4) - 1):
-        if desk_4[row].energy == True and desk_4[row + 1].energy == True:
+        if desk_4[row].energy and desk_4[row + 1].energy:
             print('active true desk_4')
             random.shuffle(desk_4)
 
     for row in range(0, len(desk_5) - 1):
-        if desk_5[row].energy == True and desk_5[row + 1].energy == True:
+        if desk_5[row].energy and desk_5[row + 1].energy:
             print('active true desk_5')
             random.shuffle(desk_5)
 
     for row in range(0, len(desk_6) - 1):
-        if desk_6[row].energy == True and desk_6[row + 1].energy == True:
+        if desk_6[row].energy and desk_6[row + 1].energy:
             print('active true desk_6')
             random.shuffle(desk_6)
 

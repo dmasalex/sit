@@ -8,7 +8,7 @@ from .forms import SchoolboyForm, UserLoginForm
 from .functions import create_lst_boys
 from django.contrib.auth import login, logout
 
-from _datetime import datetime
+from datetime import datetime
 
 
 def print_location(request, pk):
@@ -120,8 +120,8 @@ def location(request, slug):
     dict_loc['desk_6'] = d_6
 
     location = Location(
-        classroom = classroom,
-        position = dict_loc
+        classroom=classroom,
+        position=dict_loc
     )
     location.save()
     context['pk'] = location.pk

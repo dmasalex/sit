@@ -1,7 +1,20 @@
 from django.urls import path
-from .views import SchoolboyListView, ClassroomDetailView, SchoolboyDetailView, SchoolboyCreate, TeacherDetail, \
-    location, SchoolboyUpdate, SchoolboyDelete, location_save, location_now, user_login, user_logout, print_location, \
-    location_update, boy_location_update
+from .views import (SchoolboyListView,
+                    ClassroomDetailView,
+                    SchoolboyDetailView,
+                    SchoolboyCreate,
+                    TeacherDetail,
+                    location,
+                    SchoolboyUpdate,
+                    SchoolboyDelete,
+                    location_save,
+                    location_now,
+                    user_login,
+                    user_logout,
+                    print_location,
+                    location_update,
+                    boy_location_update
+                    )
 from django.conf import settings
 from django.conf.urls.static import static
 
