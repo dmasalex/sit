@@ -223,7 +223,7 @@ class SchoolboyListView(ListView):
             for room in rooms:
                 classroom_lst.append(Location.objects.filter(save_bd=True, classroom__name=room).latest('create_data'))
         except Exception as e:
-            print(e)
+            print('exception', e)
         context['classroom'] = classroom_lst
         context['classroom_last'] = classroom_last
         return context
