@@ -1,6 +1,7 @@
 from django import forms
-from .models import Schoolboy
 from django.contrib.auth.forms import AuthenticationForm
+
+from .models import Schoolboy
 
 
 class UserLoginForm(AuthenticationForm):

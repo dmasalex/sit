@@ -1,20 +1,15 @@
 import ast
+from datetime import datetime
 
-from django.shortcuts import render, redirect
+from django.contrib.auth import login, logout
+from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
-from django.views.generic import (
-    ListView,
-    DetailView,
-    CreateView,
-    UpdateView,
-    DeleteView,
-)
-from .models import Schoolboy, Classroom, Teacher, Location
+from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
+                                  UpdateView)
+
 from .forms import SchoolboyForm, UserLoginForm
 from .functions import create_lst_boys
-from django.contrib.auth import login, logout
-
-from datetime import datetime
+from .models import Classroom, Location, Schoolboy, Teacher
 
 
 def print_location(request, pk):

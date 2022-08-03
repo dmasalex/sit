@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from .models import Classroom, Schoolboy, Gender, Teacher, Location, Requirement
+from .models import (Classroom, Gender, Location, Requirement, Schoolboy,
+                     Teacher)
 
 
 class RequirementAdmin(admin.ModelAdmin):

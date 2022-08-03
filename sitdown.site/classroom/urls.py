@@ -1,23 +1,12 @@
-from django.urls import path
-from .views import (
-    SchoolboyListView,
-    ClassroomDetailView,
-    SchoolboyDetailView,
-    SchoolboyCreate,
-    TeacherDetail,
-    location,
-    SchoolboyUpdate,
-    SchoolboyDelete,
-    location_save,
-    location_now,
-    user_login,
-    user_logout,
-    print_location,
-    location_update,
-    boy_location_update,
-)
 from django.conf import settings
 from django.conf.urls.static import static
+from django.urls import path
+
+from .views import (ClassroomDetailView, SchoolboyCreate, SchoolboyDelete,
+                    SchoolboyDetailView, SchoolboyListView, SchoolboyUpdate,
+                    TeacherDetail, boy_location_update, location, location_now,
+                    location_save, location_update, print_location, user_login,
+                    user_logout)
 
 urlpatterns = [
     path("", SchoolboyListView.as_view(), name="schoolboy"),
