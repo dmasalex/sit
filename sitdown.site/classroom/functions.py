@@ -5,31 +5,43 @@ def not_active(desk_3, desk_4, desk_5, desk_6):
 
     for row in range(0, len(desk_3) - 1):
         if desk_3[row].energy and desk_3[row + 1].energy:
-            print('active true desk_3')
+            print("active true desk_3")
             random.shuffle(desk_3)
 
     for row in range(0, len(desk_4) - 1):
         if desk_4[row].energy and desk_4[row + 1].energy:
-            print('active true desk_4')
+            print("active true desk_4")
             random.shuffle(desk_4)
 
     for row in range(0, len(desk_5) - 1):
         if desk_5[row].energy and desk_5[row + 1].energy:
-            print('active true desk_5')
+            print("active true desk_5")
             random.shuffle(desk_5)
 
     for row in range(0, len(desk_6) - 1):
         if desk_6[row].energy and desk_6[row + 1].energy:
-            print('active true desk_6')
+            print("active true desk_6")
             random.shuffle(desk_6)
 
     return desk_3, desk_4, desk_5, desk_6
 
 
 def create_lst_boys(
-        boys_one, girls_one, boys_one_plus, girls_one_plus,
-        boys_two, girls_two, boys_two_plus, girls_two_plus,
-        boys_three, girls_three, boys_three_plus, girls_three_plus, boys, girls):
+    boys_one,
+    girls_one,
+    boys_one_plus,
+    girls_one_plus,
+    boys_two,
+    girls_two,
+    boys_two_plus,
+    girls_two_plus,
+    boys_three,
+    girls_three,
+    boys_three_plus,
+    girls_three_plus,
+    boys,
+    girls,
+):
     desk_1, desk_2, desk_3, desk_4, desk_5, desk_6 = [], [], [], [], [], []
 
     while len(desk_1) < 2:
@@ -98,22 +110,34 @@ def create_lst_boys(
                                                     try:
                                                         try:
                                                             try:
-                                                                boy = random.choice(boys_one_plus)
+                                                                boy = random.choice(
+                                                                    boys_one_plus
+                                                                )
                                                                 desk_1.append(boy)
-                                                                boys_one_plus.remove(boy)
+                                                                boys_one_plus.remove(
+                                                                    boy
+                                                                )
                                                                 continue
                                                             except:
-                                                                girl = random.choice(girls_one_plus)
+                                                                girl = random.choice(
+                                                                    girls_one_plus
+                                                                )
                                                                 desk_1.append(girl)
-                                                                girls_one_plus.remove(girl)
+                                                                girls_one_plus.remove(
+                                                                    girl
+                                                                )
                                                                 continue
                                                         except:
-                                                            girl = random.choice(girls_two_plus)
+                                                            girl = random.choice(
+                                                                girls_two_plus
+                                                            )
                                                             desk_1.append(girl)
                                                             girls_two_plus.remove(girl)
                                                             continue
                                                     except:
-                                                        boy = random.choice(boys_two_plus)
+                                                        boy = random.choice(
+                                                            boys_two_plus
+                                                        )
                                                         desk_1.append(boy)
                                                         boys_two_plus.remove(boy)
                                                         continue
